@@ -182,13 +182,14 @@
   justify-content: center;
 }
 
-@media (max-width: 1536px) {
+/* Responsive Design */
+@media screen and (max-width: 1536px) {
   .hTitle {
     font-size: 72px;
   }
 }
 
-@media (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   .bg {
     height: 60%;
     top: auto;
@@ -212,7 +213,17 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
+  .hTitle {
+    font-size: 72px;
+  }
+  
+  .awards {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
   .bg {
     height: 50%;
   }
@@ -222,44 +233,51 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .hero {
     flex-direction: column;
   }
 
-  .bg {
-    height: 60%;
-  }
-
   .hSection {
     width: 100%;
-  }
-
-  .hSection.left {
+    height: 50%;
     align-items: center;
     text-align: center;
-    gap: 36px;
   }
 
   .hTitle {
     font-size: 48px;
+    margin-top: 30px;
   }
 
   .awards {
-    width: 100%;
+    width: 80%;
+    text-align: center;
   }
 
   .awardList {
     justify-content: center;
   }
 
-  .hSection.right {
-    justify-content: end;
+  .hImg {
+    height: 60%;
   }
 
-  .follow,
-  .bubbleContainer,
-  .certificate {
+  .follow {
     display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hTitle {
+    font-size: 36px;
+  }
+
+  .awards p {
+    font-size: 12px;
+  }
+
+  .hImg {
+    height: 50%;
   }
 }

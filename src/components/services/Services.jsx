@@ -114,8 +114,16 @@ const Services = () => {
           <Counter from={0} to={70} text="Happy Clients" />
         </div>
       </div>
-      <div className="sSection right">
-        {renderModel()}
+      <div className="sSection right" style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+          {renderModel()}
+        </div>
       </div>
     </div>
   );

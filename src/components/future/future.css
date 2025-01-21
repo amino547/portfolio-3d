@@ -123,3 +123,39 @@
     transform: rotateY(calc(var(--i) * 60deg)) translateZ(100px);
   }
 }
+
+@media (max-width: 480px) {
+  .future {
+    padding: 30px 10px;
+  }
+
+  .future-container {
+    padding: 0 10px;
+  }
+
+  .future-left {
+    padding: 15px;
+  }
+
+  .future-left h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+  }
+
+  .dream-item {
+    padding: 12px;
+  }
+
+  .dream-year {
+    font-size: 1.2em;
+    min-width: 60px;
+  }
+
+  .dream-item p {
+    font-size: 0.9em;
+  }
+
+  .future-right {
+    min-height: 200px;
+  }
+}

@@ -2,6 +2,7 @@
   height: 100%;
   overflow: hidden;
   display: flex;
+  padding: 40px 20px;
 }
 
 .sSection {
@@ -14,6 +15,22 @@
 .sTitle {
   font-size: 88px;
   margin-bottom: 24px;
+}
+
+.servicesTitle {
+  font-size: 48px;
+  margin-bottom: 40px;
+  color: white;
+  text-align: center;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .serviceList {
@@ -33,6 +50,18 @@
   cursor: pointer;
 }
 
+.serviceCard {
+  background-color: #2f204e;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+}
+
 .serviceIcon {
   width: 48px;
   height: 48px;
@@ -40,6 +69,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 40px;
+  color: #ff69b4;
+  margin-bottom: 20px;
 }
 
 .serviceIcon img {
@@ -56,6 +88,18 @@
 .serviceInfo h3 {
   font-size: 13px;
   font-weight: 300;
+}
+
+.serviceTitle {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.serviceDescription {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 1.6;
 }
 
 .service:nth-child(1) .serviceIcon {
@@ -102,6 +146,19 @@
   height: 100% !important;
 }
 
+.sSection.right {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+/* Ensure the Canvas container takes full height */
+.sSection.right canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 600px;
+}
+
 @media (max-width: 1536px) {
   .service,
   .counterList {
@@ -128,19 +185,86 @@
   .counterList {
     width: 100%;
   }
+
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
 }
 
 @media (max-width: 768px) {
   .services {
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
   }
 
-  .sSection {
+  .sSection.left {
     width: 100%;
   }
 
   .sSection.right {
-    display: none;
+    width: 100%;
+    height: 400px; /* Fixed height for mobile */
+    display: flex !important; /* Force display */
+    margin-top: 20px;
+  }
+
+  .sSection.right canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+  }
+
+  .servicesTitle {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 0 15px;
+  }
+
+  .serviceCard {
+    padding: 20px;
+  }
+
+  .serviceIcon {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .serviceTitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sSection.right {
+    height: 300px; /* Smaller height for very small devices */
+  }
+
+  .servicesTitle {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .serviceIcon {
+    font-size: 28px;
+  }
+
+  .serviceTitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .serviceDescription {
+    font-size: 14px;
   }
 }
