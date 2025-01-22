@@ -5,7 +5,7 @@
 
 import { lazy, Suspense } from "react";
 import LazyLoad from "react-lazyload";
-import "./App.css"
+import "./app.css"
 const Hero = lazy(() => import("./components/hero/Hero"));
 const Services = lazy(() => import("./components/services/Services"));
 const Work = lazy(() => import("./components/work"));
