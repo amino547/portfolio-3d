@@ -25,7 +25,8 @@ const IphoneContainer = () => {
             shadows
           >
             <IphoneModel 
-              scale={isMobile ? 1.2 : 1.5}
+              scale={isMobile ? 0.8 : 1}
+              position={[0, isMobile ? 0 : -0.5, 0]}
               rotation={[0, Math.PI / 3, 0]}
             />
           </Stage>

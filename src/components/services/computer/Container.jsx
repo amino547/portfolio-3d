@@ -11,8 +11,8 @@ const Container = () => {
     <div style={{ width: "100%", height: "100%", minHeight: "500px" }}>
       <Canvas
         camera={{ 
-          position: [0, 0, isMobile ? 7 : 5], 
-          fov: isMobile ? 60 : 75 
+          position: [0, 0, isMobile ? 5 : 4], 
+          fov: isMobile ? 60 : 50 
         }}
         style={{ background: "transparent" }}
       >
@@ -21,21 +21,22 @@ const Container = () => {
           <pointLight position={[10, 10, 10]} />
           <Stage
             environment="city"
-            intensity={0.6}
+            intensity={1}
             contactShadow
             shadows
           >
             <Compo 
-              scale={isMobile ? 1.5 : 2} 
-              position={[0, isMobile ? 0 : -1, 0]} 
-              rotation={[0, Math.PI / 4, 0]} 
+              scale={isMobile ? 0.8 : 1} 
+              position={[0, isMobile ? 0 : -0.5, 0]} 
+              rotation={[0, Math.PI / 3, 0]} 
             />
           </Stage>
           <OrbitControls 
             enableZoom={false} 
-            autoRotate 
-            autoRotateSpeed={0.5}
             enablePan={false}
+            enableRotate={true}
+            autoRotate={true}
+            autoRotateSpeed={2}
             minPolarAngle={Math.PI / 2}
             maxPolarAngle={Math.PI / 2}
           />
