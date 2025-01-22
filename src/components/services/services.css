@@ -268,3 +268,45 @@
     font-size: 14px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .sSection {
+    width: 100%;
+  }
+
+  .sTitle {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .service {
+    width: 100%;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .serviceInfo h2 {
+    font-size: 16px;
+  }
+
+  .serviceInfo h3 {
+    font-size: 12px;
+  }
+
+  .serviceIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 32px;
+  }
+
+  .serviceIcon img {
+    width: 20px;
+    height: 20px;
+  }
+}

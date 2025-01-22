@@ -4,10 +4,15 @@ import { IphoneModel } from "./Iphone";
 import { OrbitControls, Stage } from "@react-three/drei";
 
 const IphoneContainer = () => {
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <div style={{ width: "100%", height: "100%", minHeight: "500px" }}>
       <Canvas
-        camera={{ position: [0, 0, 4], fov: 50 }}
+        camera={{ 
+          position: [0, 0, isMobile ? 5 : 4], 
+          fov: isMobile ? 60 : 50 
+        }}
         style={{ background: "transparent" }}
       >
         <Suspense fallback={null}>
@@ -19,15 +24,19 @@ const IphoneContainer = () => {
             contactShadow
             shadows
           >
-            <IphoneModel />
+            <IphoneModel 
+              scale={isMobile ? 1.2 : 1.5}
+              rotation={[0, Math.PI / 3, 0]}
+            />
           </Stage>
           <OrbitControls 
-            enableZoom={true}
-            enablePan={true}
+            enableZoom={false}
+            enablePan={false}
             enableRotate={true}
-            autoRotate={false}
-            maxDistance={10}
-            minDistance={2}
+            autoRotate={true}
+            autoRotateSpeed={2}
+            minPolarAngle={Math.PI / 2}
+            maxPolarAngle={Math.PI / 2}
           />
         </Suspense>
       </Canvas>
