@@ -21,7 +21,7 @@ const variants = {
 
 const Work = () => {
   const ref = useRef();
-  const isInView = useInView(ref, { margin: "-100px" });
+  const isInView = useInView(ref, { margin: "0px", once: true });
 
   return (
     <motion.div
@@ -29,7 +29,9 @@ const Work = () => {
       variants={variants}
       initial="initial"
       ref={ref}
-      animate={isInView && "animate"}
+      animate={"animate"}
+      whileInView="animate"
+      viewport={{ once: true }}
     >
       <motion.div className="textContainer" variants={variants}>
         <p>

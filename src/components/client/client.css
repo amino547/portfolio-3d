@@ -7,6 +7,8 @@
   justify-content: flex-start;
   padding: 60px 20px;
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .client-title {
@@ -160,83 +162,61 @@
 
 @media screen and (max-width: 768px) {
   .client {
+    min-height: 100vh;
     padding: 40px 15px;
+    gap: 25px;
   }
 
   .client-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 30px;
   }
 
   .testimonials-container {
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 25px;
     padding: 0 10px;
   }
 
   .testimonial-card {
-    padding: 20px;
+    padding: 25px;
+    min-height: 250px;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .comment {
+    min-height: 100px;
     font-size: 0.95rem;
-    min-height: 60px;
-  }
-
-  .testimonial-name {
-    font-size: 1.1rem;
-  }
-
-  .testimonial-role {
-    font-size: 0.85rem;
-  }
-
-  .star {
-    font-size: 1.1rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .client {
+    min-height: 100vh;
     padding: 30px 10px;
+    gap: 20px;
   }
 
   .client-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 25px;
   }
 
   .testimonials-container {
-    gap: 15px;
-    padding: 0 5px;
+    gap: 20px;
   }
 
   .testimonial-card {
-    padding: 15px;
+    padding: 20px;
+    min-height: 220px;
   }
 
   .comment {
-    font-size: 0.9rem;
-    min-height: 50px;
-    margin-bottom: 15px;
-  }
-
-  .testimonial-name {
-    font-size: 1rem;
-  }
-
-  .testimonial-role {
-    font-size: 0.8rem;
-  }
-
-  .star {
-    font-size: 1rem;
-  }
-
-  .stars {
-    margin-bottom: 10px;
+    min-height: 100px;
   }
 
   .testimonial-info {
-    padding-top: 12px;
+    padding-top: 15px;
   }
 }

@@ -5,7 +5,7 @@
 
 import { lazy, Suspense } from "react";
 import LazyLoad from "react-lazyload";
-
+import "./App.css"
 const Hero = lazy(() => import("./components/hero/Hero"));
 const Services = lazy(() => import("./components/services/Services"));
 const Work = lazy(() => import("./components/work"));
@@ -32,13 +32,6 @@ const App = () => {
           </section>{" "}
         </LazyLoad>
       </Suspense>
-      <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#work">
-            <Work />
-          </section>
-        </LazyLoad>
-      </Suspense>
 
       <Suspense fallback={"loading..."}>
         <LazyLoad height={"100vh"} offset={-100}>
@@ -46,7 +39,6 @@ const App = () => {
             <Future />
           </section>
         </LazyLoad>
-        
       </Suspense>
       <Suspense fallback={"loading..."}>
         <LazyLoad height={"600vh"} offset={-100}>
@@ -55,21 +47,33 @@ const App = () => {
           {/* </section> */}{" "}
         </LazyLoad>
       </Suspense>
-      <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#client">
+
+
+      <Suspense fallback={<div className="loading-fallback">Loading...</div>}>
+        <LazyLoad height={"100vh"} offset={100} once>
+          <section id="work">
+            <Work />
+          </section>
+        </LazyLoad>
+      </Suspense>
+
+
+      <Suspense fallback={<div className="loading-fallback">Loading...</div>}>
+        <LazyLoad height={"100vh"} offset={100} once>
+          <section id="client">
             <Client />
           </section>
         </LazyLoad>
       </Suspense>
-      <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#contact">
+
+      <Suspense fallback={<div className="loading-fallback">Loading...</div>}>
+        <LazyLoad height={"100vh"} offset={100} once>
+          <section id="contact">
             <Contact />
           </section>
         </LazyLoad>
       </Suspense>
-      <Suspense fallback={"loading..."}>
+      <Suspense fallback={<div className="loading-fallback">Loading...</div>}>
         <ChatAi />
       </Suspense>
     </div>
